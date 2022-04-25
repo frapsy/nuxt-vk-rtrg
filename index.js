@@ -7,8 +7,9 @@ module.exports = function vkRtrg (options) {
   }
 
   // Add vk api script to head
+  const version = options.version !== undefined ? options.version : 169
   this.options.head.script.push({
-    src: 'https://vk.com/js/api/openapi.js?159',
+    src: `https://vk.com/js/api/openapi.js?${version}`,
     async: true
   })
 
