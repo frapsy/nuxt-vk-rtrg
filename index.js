@@ -13,6 +13,13 @@ module.exports = function vkRtrg (options) {
     async: true
   })
 
+    // Script preload
+  this.options.head.link.push({
+    href: `https://vk.com/js/api/openapi.js?${version}`,
+    rel: 'preload',
+    as: 'script'
+  })
+
   // Register plugin
   this.addPlugin({src: path.resolve(__dirname, 'plugin.js'), ssr: false, options})
 }
